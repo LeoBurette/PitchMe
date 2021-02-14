@@ -2,6 +2,7 @@ package com.example.pitchme;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
+import android.text.Html;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -33,6 +35,7 @@ import java.util.Random;
 public class PlayActivity extends AppCompatActivity {
     TextView timer ;
     TextView name ;
+    TextView other;
     ListView listView;
     Button button ;
     TextView informations ;
@@ -53,6 +56,7 @@ public class PlayActivity extends AppCompatActivity {
         score = new HashMap<String, Integer>();
         timer = (TextView)findViewById(R.id.playTimer);
         name = (TextView)findViewById(R.id.playName);
+        other = (TextView)findViewById(R.id.otherText);
         button = (Button)findViewById(R.id.playButton);
         informations = (TextView)findViewById(R.id.playInformation);
         listView = (ListView)findViewById(R.id.playListName);
@@ -79,8 +83,10 @@ public class PlayActivity extends AppCompatActivity {
         if(!(nbJoueur<names.size()))
             nbJoueur = 0;
 
-        String s = "Le prochain joueur est " + names.get(nbJoueur) + ". Appuie sur Dévoiler quand tu est prêt.";
-        name.setText(s);
+        String s = "<b>" + names.get(nbJoueur) + "</b>";
+        name.setText(HtmlCompat.fromHtml(s, HtmlCompat.FROM_HTML_MODE_LEGACY));
+        name.setTextSize(other.getTextSize()+5);
+        other.setText("Tu est le prochain joueur. Appuie sur Dévoiler quand tu est prêt.");
 
         initTimer();
 
