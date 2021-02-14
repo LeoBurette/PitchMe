@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BeforePlayActivity">
+
+    <TextView
+        android:id="@+id/salut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salut"
+        android:layout_gravity="center"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editname"
+        android:hint="Nom du joueur"/>
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ajouter joueur"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/list"
+            android:layout_weight="60"/>
+
+        <Button
+            android:id="@+id/launchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pitch Me !"
+            android:layout_gravity="center"
+            android:layout_weight="0"/>
+    </LinearLayout>
+
+
+</LinearLayout>
