@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         ((Button)findViewById(R.id.buttonPlay)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent beforePlay = new Intent(MainActivity.this, BeforePlayActivity.class);
+                Intent beforePlay = new Intent(MainActivity.this, SelectPlayerActivity.class);
                 startActivity(beforePlay);
             }
         });

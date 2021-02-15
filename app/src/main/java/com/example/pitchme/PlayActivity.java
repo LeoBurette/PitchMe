@@ -71,10 +71,11 @@ public class PlayActivity extends AppCompatActivity {
         }
         movies = getIntent().getStringArrayListExtra("Films");
 
-        startGame(0);
+        startGame(0, getIntent().getIntExtra("Turn",movies.size()));
     }
 
-    private void startGame(int nbJoueur){
+    private void startGame(int nbJoueur, final int turn){
+
         if(movies.size()<1){
             endPartie();
             return;
@@ -108,7 +109,7 @@ public class PlayActivity extends AppCompatActivity {
                         button.setText("Dévoiller");
                         calculateScore(finalNbJoueur1);
                         setVisibilityGame(false);
-                        startGame(finalNbJoueur + 1);
+                        startGame(finalNbJoueur + 1, turn-1);
                     }
                 });
             }

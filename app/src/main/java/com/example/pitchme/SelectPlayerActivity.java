@@ -12,14 +12,14 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class BeforePlayActivity extends AppCompatActivity {
+public class SelectPlayerActivity extends AppCompatActivity {
     ListView list;
     private ArrayList<String> prenoms;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_before_play);
+        setContentView(R.layout.activity_select_player);
         prenoms = new ArrayList<String>();
         list = (ListView)findViewById(R.id.list);
         final EditText edit = ((EditText)findViewById(R.id.editname));
@@ -29,7 +29,7 @@ public class BeforePlayActivity extends AppCompatActivity {
                 if(!(edit.getText().toString().isEmpty())){
                     prenoms.add(edit.getText().toString());
                     edit.getText().clear();
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(BeforePlayActivity.this, android.R.layout.simple_list_item_1 ,  prenoms);
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(SelectPlayerActivity.this, android.R.layout.simple_list_item_1 ,  prenoms);
                     list.setAdapter(adapter);
                 }
             }
@@ -37,7 +37,7 @@ public class BeforePlayActivity extends AppCompatActivity {
         ((Button)findViewById(R.id.launchButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BeforePlayActivity.this, SelectMovieActivity.class);
+                Intent intent = new Intent(SelectPlayerActivity.this, SelectMovieActivity.class);
                 intent.putExtra("array", prenoms);
                 startActivity(intent);
             }

@@ -12,7 +12,7 @@
         <activity android:name=".EndParty"></activity>
         <activity android:name=".SelectMovieActivity" />
         <activity android:name=".PlayActivity" />
-        <activity android:name=".BeforePlayActivity" />
+        <activity android:name=".SelectPlayerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
