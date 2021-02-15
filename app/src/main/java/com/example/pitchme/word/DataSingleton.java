@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Random;
 
@@ -23,6 +24,7 @@ public class DataSingleton{
     }
 
     public ArrayList<String> getMovies() {
+        Collections.sort(movies);
         return movies;
     }
 

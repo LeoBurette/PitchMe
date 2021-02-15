@@ -83,7 +83,7 @@ public class SelectMovieActivity extends AppCompatActivity {
     }
 
     private void fin(boolean preselect){
-        movie = (preselect)? DataSingleton.getInstance().getMovies(joueurs.size()*3):movie;
+        movie = (preselect)? DataSingleton.getInstance().getMovies(joueurs.size()*numberPicker.getValue()):movie;
         Intent intent = new Intent(SelectMovieActivity.this, PlayActivity.class);
         intent.putExtra("Joueurs", joueurs);
         intent.putExtra("Films", movie);
