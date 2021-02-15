@@ -19,7 +19,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pitchme.word.Dictionnaire;
+import com.example.pitchme.word.DataSingleton;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -172,7 +172,7 @@ public class PlayActivity extends AppCompatActivity {
         });
         String[] strings = new String[10];
          for(int i = 0; i < 10; i++){
-             strings[i] = Dictionnaire.getInstance().getRandomWord();
+             strings[i] = DataSingleton.getInstance().getRandomWord();
          }
          listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, strings));
 

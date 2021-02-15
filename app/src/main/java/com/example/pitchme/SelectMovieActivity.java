@@ -1,9 +1,6 @@
 package com.example.pitchme;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,9 +11,10 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
-import com.example.pitchme.word.Dictionnaire;
+import com.example.pitchme.word.DataSingleton;
 
 import java.util.ArrayList;
+import java.util.Dictionary;
 
 public class SelectMovieActivity extends AppCompatActivity {
     ArrayList<String> movie;
@@ -40,7 +38,7 @@ public class SelectMovieActivity extends AppCompatActivity {
 
         numberPicker = (NumberPicker)findViewById(R.id.numberPicker);
         numberPicker.setMinValue(1);
-        numberPicker.setMaxValue(Dictionnaire.getInstance().getMoviesSize()/joueurs.size());
+        numberPicker.setMaxValue(DataSingleton.getInstance().getMoviesSize()/joueurs.size());
     }
 
     public void print(final ArrayList arrayList, final EditText edit1, final EditText edit2, final EditText edit3, final int i){
@@ -85,7 +83,7 @@ public class SelectMovieActivity extends AppCompatActivity {
     }
 
     private void fin(boolean preselect){
-        movie = (preselect)?Dictionnaire.getInstance().getMovies(joueurs.size()*3):movie;
+        movie = (preselect)? DataSingleton.getInstance().getMovies(joueurs.size()*3):movie;
         Intent intent = new Intent(SelectMovieActivity.this, PlayActivity.class);
         intent.putExtra("Joueurs", joueurs);
         intent.putExtra("Films", movie);
