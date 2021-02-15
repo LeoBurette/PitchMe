@@ -71,7 +71,7 @@ public class PlayActivity extends AppCompatActivity {
 
     private void startGame(int nbJoueur, final int turn){
 
-        if(movies.size()<1){
+        if( turn < 1 ){
             endPartie();
             return;
         }

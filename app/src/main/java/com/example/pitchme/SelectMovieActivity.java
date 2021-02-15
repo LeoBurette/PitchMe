@@ -85,12 +85,12 @@ public class SelectMovieActivity extends AppCompatActivity {
     }
 
     private void fin(boolean preselect){
-        movie = Dictionnaire.getInstance().getMovies(joueurs.size()*3);
+        movie = (preselect)?Dictionnaire.getInstance().getMovies(joueurs.size()*3):movie;
         Intent intent = new Intent(SelectMovieActivity.this, PlayActivity.class);
         intent.putExtra("Joueurs", joueurs);
         intent.putExtra("Films", movie);
         if(check.isChecked()){
-            intent.putExtra("Turn",numberPicker.getValue());
+            intent.putExtra("Turn",numberPicker.getValue() * joueurs.size());
         }
         startActivity(intent);
     }
