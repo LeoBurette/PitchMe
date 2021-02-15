@@ -11,7 +11,7 @@ public class DictionnaireTest {
         Boolean ok = true;
         Dictionnaire dictionnaire = Dictionnaire.getInstance();
         for(int i = 0; i < dictionnaire.getNumberWord(); i++){
-            String s = dictionnaire.getRandom();
+            String s = dictionnaire.getRandomWord();
             System.out.printf(s);
             if(s.contains("\\|")){
                 ok = false;

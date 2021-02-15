@@ -1,6 +1,5 @@
 package com.example.pitchme;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,14 +11,10 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Parcelable;
-import android.text.Html;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckedTextView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -177,7 +172,7 @@ public class PlayActivity extends AppCompatActivity {
         });
         String[] strings = new String[10];
          for(int i = 0; i < 10; i++){
-             strings[i] = Dictionnaire.getInstance().getRandom();
+             strings[i] = Dictionnaire.getInstance().getRandomWord();
          }
          listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, strings));
 
