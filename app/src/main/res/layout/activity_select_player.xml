@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SelectPlayerActivity">
+    tools:context=".SelectPlayerActivity"
+    android:background="@drawable/background_gradiant">
 
     <TextView
         android:id="@+id/salut"

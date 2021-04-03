@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SelectMovieActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/background_gradiant">
 
     <TextView
         android:id="@+id/selectText"
