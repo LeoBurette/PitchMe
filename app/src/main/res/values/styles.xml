@@ -9,6 +9,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="buttonStyle">@style/ButtonStyle</item>
+        <item name="android:textViewStyle">@style/TextViewColor</item>
     </style>
 
     <style name="AcceuilButton" >
@@ -20,5 +21,7 @@
         <item name="android:background">@drawable/button_selector</item>
     </style>
 
-
+    <style name="TextViewColor" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 </resources>
