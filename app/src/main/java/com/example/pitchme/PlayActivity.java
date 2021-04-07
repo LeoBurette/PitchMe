@@ -190,7 +190,7 @@ public class PlayActivity extends AppCompatActivity {
     private void setVisibilityGame(boolean val){
         int visibility = (val)?View.VISIBLE:View.INVISIBLE;
         listView.setVisibility(visibility);
-        recyclerView.setVisibility(visibility);
+        findViewById(R.id.playLayout).setVisibility(visibility);
         informations.setVisibility(visibility);
     }
 }

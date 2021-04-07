@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -48,15 +49,24 @@ public class EndParty extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(minterstitialAd != null){
-                    minterstitialAd.show();
-                    minterstitialAd = null;
-                }else{
-                    Intent intent = new Intent(EndParty.this, MainActivity.class);
-                    startActivity(intent);
-                }
-
+                restartGame();
             }
         });
+
+    }
+
+    @Override
+    public void onBackPressed(){
+        restartGame();
+    }
+
+    private void restartGame(){
+        if(minterstitialAd != null){
+            minterstitialAd.show();
+            minterstitialAd = null;
+        }else{
+            Intent intent = new Intent(EndParty.this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 }

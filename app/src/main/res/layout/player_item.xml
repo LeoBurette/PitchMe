@@ -4,7 +4,7 @@
     android:orientation="horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="20dip"
+    android:padding="15dip"
     android:background="@drawable/player_shape_selector">
 
     <TextView

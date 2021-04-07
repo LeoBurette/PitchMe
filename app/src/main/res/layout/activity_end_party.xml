@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="25"
         android:text="Retour acceuil"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:layout_margin="5dp"/>
 
 </LinearLayout>
